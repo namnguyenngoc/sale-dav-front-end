@@ -5,6 +5,7 @@ import config from '@/config/config';
 import PageFooter from '@/components/footer/index';
 import PageHeader from '@/components/header/index';
 import 'vue-swipe-actions/dist/vue-swipe-actions.css';
+// @ts-ignore
 import { SwipeList, SwipeOut } from 'vue-swipe-actions';
 
 export default Vue.extend({
@@ -200,6 +201,7 @@ export default Vue.extend({
       totals () {
         let sums = 0;
         for (let idx in this.chiTieuList) {
+          // @ts-ignore
           sums += parseFloat(this.chiTieuList[idx].so_tien);
         };
         return formatPrice(sums, 0);
@@ -210,30 +212,30 @@ export default Vue.extend({
       //   chiTieuErList: [], // GD Loi
       totalTatToan () {
         let sums = 0;
-        for (var idx in this.chiTieuCTTList) {
-          sums += parseFloat(this.chiTieuCTTList[idx].so_tien);
-        }
-        return sums
+        // for (var idx in this.chiTieuCTTList) {
+        //   sums += parseFloat(this.chiTieuCTTList[idx].so_tien);
+        // }
+        return sums;
       },
       totalCSK () {
         let sums = 0;
-        for (var idx in this.chiTieuCSKList) {
-          sums += parseFloat(this.chiTieuCSKList[idx].so_tien);
-        }
+        // for (var idx in this.chiTieuCSKList) {
+        //   sums += parseFloat(this.chiTieuCSKList[idx].so_tien);
+        // }
         return sums
       },
       totalDC () {
         let sums = 0;
-        for (var idx in this.chiTieuDCList) {
-          sums += parseFloat(this.chiTieuDCList[idx].so_tien);
-        }
-        return sums
+        // for (var idx in this.chiTieuDCList) {
+        //   sums += parseFloat(this.chiTieuDCList[idx].so_tien);
+        // }
+        return sums;
       },
       totalEr () {
         let sums = 0;
-        for (var idx in this.chiTieuErList) {
-          sums += parseFloat(this.chiTieuErList[idx].so_tien);
-        }
+        // for (var idx in this.chiTieuErList) {
+        //   sums += parseFloat(this.chiTieuErList[idx].so_tien);
+        // }
         return sums;
       },
       items_ky_chi_list (){
@@ -287,3 +289,7 @@ function formatPrice(value: number, tofix: number) {
   const val = (value / 1).toFixed(tofix).replace(',', '.');
   return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
+interface chitieu {
+  so_tien?: number;
+}
+ 
