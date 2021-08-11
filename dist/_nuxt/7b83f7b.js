@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{376:function(e,n,o){"use strict";o.r(n);var t=o(0);n.default=t.a.extend({name:"pageFooter",data:function(){return{msg:"This is Footer"}}})}}]);

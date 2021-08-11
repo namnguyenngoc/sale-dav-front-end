@@ -71,5 +71,10 @@ export default {
         ['@babel/plugin-proposal-private-methods', { loose: true }]
       ]
     }
+  },
+  server: {
+    port: 8000, // default: 3000
+    host: '0.0.0.0', // default: localhost,
+    timing: false
   }
 }

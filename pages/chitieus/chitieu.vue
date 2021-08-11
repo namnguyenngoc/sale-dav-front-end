@@ -1,83 +1,94 @@
 <template>
   <v-row>
-    <v-col>
+    <v-col class="ma-1">
       <page-header
         title="Thông tin chi tiêu gia đình"
       ></page-header>
 
-      <v-row class="page-condition-seach">
-        <v-col cols="10">
+      <v-row class="page-condition-seach mb-0 pb-0">
+        <v-col cols="12">
           <v-row>
-            <v-col cols="1">
+            <v-col md="12" sm="12" class="text-right pt-1 mt-0 mb-0 pb-0">
+              <v-btn
+                v-show="true"
+              >
+                <span>
+                  Thêm
+                </span>
+                <v-icon>
+                  mdi-plus
+                </v-icon>
+              </v-btn>
+
+              <v-btn
+                v-show="true"
+              >
+                <span>
+                  Home
+                </span>
+                <v-icon>
+                  mdi-home
+                </v-icon>
+              </v-btn>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="3" md="1" class="pt-1">
               <v-checkbox
                 v-model="bankChecked"
                 value="HSBC"
                 label="HSBC"
                 color="red"
-                class="pa-0 ma-0 ml-0 mt-3"
                 hide-details
                 @change="filterStatus()"
               />
             </v-col>
-            <v-col cols="1">
+            <v-col cols="3" md="1" class="pt-1">
               <v-checkbox
                 v-model="bankChecked"
                 label="SC"
-                value="SC"
+                value="SC BANK"
                 color="red"
-                class="pa-0 ma-0 ml-3 mt-3"
                 hide-details
                 @change="filterStatus()"
               />
             </v-col>
-            <v-col cols="1">
+            <v-col cols="3" md="1" class="pt-1">
               <v-checkbox
                 v-model="bankChecked"
                 label="VIB"
                 value="VIB"
                 color="red"
-                class="pa-0 ma-0 ml-3 mt-3"
                 hide-details
                 @change="filterStatus()"
               />
             </v-col>
-            <v-col cols="1">
+            <v-col cols="3" md="1" class="pt-1">
               <v-checkbox
                 v-model="allStatusChecked"
-                label="Tất cả"
+                label="All"
                 value="ALL"
                 color="red"
-                class="pa-0 ma-0 ml-3 mt-3"
                 hide-details
                 @change="getChiTieus()"
               />
             </v-col>
-            <v-col cols="1">
-            </v-col>
           </v-row>
           <v-row>
-            <v-col col="1">
-               <v-text-field
-                v-model="totals"
-                label="Tổng số tiền"
-                class="text-right"
-                suffix="VNĐ"
-                readonly
+            <v-col md="1" sm="6">
+              <v-autocomplete
+                :items="this.items_ky_chi_list"
+                v-model="selectDateCurrent"
+                label="Kỳ"
+                item-text="title"
+                item-value="code"
+                @change="getChiTieus()"
+                hide-details=""
                 dense
-              ></v-text-field>
+                return-object
+              />
             </v-col>
-
-            <v-col col="3">
-              <v-text-field
-                v-model="srcProcNm"
-                label="Nội dung chi"
-                @keyup.enter="searchList()"
-                dense
-                class="pl-2 find-by-name-workflow"
-              ></v-text-field>
-            </v-col>
-
-            <v-col col="3">
+            <v-col md="1" sm="6">
               <v-autocomplete
                 :items="this.typeList"
                 v-model="includeGop"
@@ -93,30 +104,36 @@
               />
             </v-col>
 
-            <v-col col="1">
-              <v-autocomplete
-                :items="this.items_ky_chi_list"
-                v-model="selectDateCurrent"
-                label="Kỳ"
-                item-text="title"
-                item-value="code"
-                @change="getChiTieus()"
-                hide-details=""
+            <v-col md="3" sm="6">
+              <v-text-field
+                v-model="noiDungChi"
+                label="Nội dung chi"
+                @keyup.enter="filterName()"
                 dense
-                return-object
-              />
+                hide-details
+              ></v-text-field>
+            </v-col>
+
+            
+            <v-col md="2" sm="6" class="pb-1 mb-1">
+               <v-text-field
+                v-model="totals"
+                label="Tổng số tiền"
+                class="text-right"
+                suffix="VNĐ"
+                readonly
+                dense
+                hide-details
+              ></v-text-field>
             </v-col>
             
-            <v-col col="2">
-              End
-            </v-col>
           </v-row>
         </v-col>
         <v-col cols="2">
         </v-col>
       </v-row>
-      <v-row class="page-list">
-        <v-col cols="12" class="lists">
+      <v-row class="page-list mt-0 pt-0">
+        <v-col cols="12" class="lists mt-0 pt-0">
           <swipe-list
               ref="list"
               class="card lst-items"
@@ -158,17 +175,16 @@
                         </v-col>
                         <v-col
                           cols="4"
-                          class="pa-1"
+                          class="pa-1 text-right"
                           :style="item.status_nm == 'FAIL'||item.status_nm == 'NX' ? 'color: #FF0000' : ''"
                         >
                           <v-menu offset-y>
                             <template v-slot:activator="{ on, attrs }">
                               <v-btn
-                                :color="item.status_nm == 'FAIL'||item.status_nm == 'NX' ? 'error' : 'primary'"
-                                dark
+                                :color="item.status_nm == 'FAIL'||item.status_nm == 'NX' ? 'error' : 'default'"
                                 v-bind="attrs"
-                                class="rounded-10"
                                 v-on="on"
+                                small
                               >
                                 {{ stsThanhToan.filter(sts => sts.id == item.status_nm).pop().name }}
                               </v-btn>
@@ -188,10 +204,11 @@
                         <v-col
                           cols="3"
                           style="color: #FF0000"
-                          class="pa-1"
+                          class="pa-1 text-right"
                         >
-                          <!-- <strong>{{ formatPrice(item.so_tien, 0) }}</strong> -->
+                          <strong>{{ formatPrice(item.so_tien, 0) }}</strong>
                         </v-col>
+                        
                       </v-row>
                       <v-row>
                         <v-col

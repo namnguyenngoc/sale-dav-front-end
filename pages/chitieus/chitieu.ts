@@ -86,6 +86,7 @@ export default Vue.extend({
           chiTieuDCList: [], // Du Chi
           chiTieuErList: [], // GD Loi
           bankChecked: ['HSBC', 'SC BANK', 'CITI BANK', 'VIB'],
+          noiDungChi: "",
         }
     },
     components: {
@@ -103,10 +104,11 @@ export default Vue.extend({
       moment2(d: String) {
         return moment(String(d)).format("DD-MM-YYYY");
       },
-      // formatPrice (value: Number, tofix: Number) {
-      //   const val = (value / 1).toFixed(tofix).replace(',', '.');
-      //   return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-      // },
+      formatPrice (value, tofix) {
+        const val = (value / 1).toFixed(tofix).replace(',', '.');
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        
+      },
       filterStatus () {
         console.log('fiter')
         const seft = this;
@@ -126,6 +128,32 @@ export default Vue.extend({
             return false
           })
           this.chiTieuList = newList;
+        }
+      },
+      filterName () {
+        let self = this;
+        if (this.noiDungChi === 'CSK') {
+          var newListBK = this.originListChiTieu.filter(function (item) {
+            // @ts-ignore
+            if (item.status_nm === 'CSK') return true;
+          })
+          newListBK = newListBK.filter(function (item) {
+            // Filter bank
+            // @ts-ignore
+            if (item.noi_dung.toLowerCase().includes(seft.searchCSK.toLowerCase())) return true;
+            return false;
+          })
+          this.chiTieuCSKList = newListBK;
+        } else {
+          var newList = this.originListChiTieu;
+          newList = newList.filter(function (item) {
+            // Filter bank
+            // @ts-ignore
+            if (item.noi_dung.toLowerCase().includes(self.noiDungChi.toLowerCase())) return true;
+            return false;
+          })
+          this.chiTieuList = newList;
+        
         }
       },
       async getChiTieus () {
