@@ -1,4 +1,350 @@
 // Ref: https://github.com/nuxt-community/vuetify-module#customvariables
 //
+
 // The variables you want to modify
 // $font-size-root: 20px;
+.v-datatable__actions__range-controls .theme--light.v-icon {
+    color: rgba(0,0,0,.54) !important;
+  }
+  
+  .rounded-lg{
+    border-radius: 5px;
+  }
+  
+  /* .table-list td.chk-input .v-input--hide-details>.v-input__control>.v-input__slot{
+    width: 100% !important;
+  } */
+  .table-list td.chk-input .v-input__control{
+    margin: auto;
+  }
+  .table-list td.chk-input .v-input__control .v-input__slot .v-input--selection-controls__input{
+    margin: 0px;
+  }
+  
+  .table-list tr td, 
+  .table-list thead th{
+    // border: 1px solid;
+    border-right: 0px;
+    // border-color: #dcdcdc;
+  }
+  .table-list thead th{
+    border-bottom: 5px;
+   
+  }
+  .table-list thead th span{
+    color: #ffffff;
+    font-weight: bold;
+  }
+  // .table-list thead th:first-child[rowspan] ~ td:nth-of-type(n+3),
+  // .table-list thead th:first-child:not([rowspan]) ~ td:nth-of-type(n+2) {
+  
+  .table-list thead th:first-child:not([rowspan]){
+    border-bottom-width: 5px;
+    border-bottom-color: red;
+  }
+  
+  .v-footer{
+    padding: 0px;
+  }
+  
+  #sale-storage {
+    height: 845px;
+    max-width: 100% !important;
+  }
+  
+  .v-card__title h2.headline{
+    color: white
+  }
+  
+  
+  .table-list tr td .v-simple-checkbox{
+    text-align: center;
+  }
+  .table-list tr td{
+    border-width: thin;
+    border-top: 0px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.12);
+    
+    
+  }
+  // .table-list tr td:not(l){
+  //   border-bottom: 0 none;
+  // }
+  
+  .table-list tr td:not(:first-child):not(:last-child){
+    border-left: 1px;
+    // border-right: 0px;
+  }
+  .image-input{
+    display: block;
+    max-width:100%;
+    height:250px;
+    cursor: pointer                  ;
+    background-size: cover            ;
+    background-position: center center;
+    border-radius: 4px;
+  }
+  .image-input.thumb{
+    display: block;
+    max-width:70px;
+    height:70px;
+    cursor: pointer                  ;
+    background-size: cover            ;
+    background-position: center center;
+    border-radius: 4px;
+  }
+  .placeholder{
+    background: #F0F0F0     ;
+    width: 100%             ;
+    height: 100%            ;
+    display: flex           ;
+    justify-content: center ;
+    align-items: center     ;
+    color: #333             ;
+    font-size: 18px         ;
+    font-family: Helvetica   ;
+  }
+  .placeholder:hover{
+    background: #E0E0E0;
+  }
+  .file-input{
+    display: none;
+    
+  }  
+  
+  .main-thumb .placeholder{
+    border-radius: 8px;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  .text-center {
+    text-align: center;
+  }
+  table tr td {
+    padding: 0 8px !important;
+  }
+  
+  .table-list table thead tr th {
+    background-color: #2196f3 !important;
+    color: #ffffff;
+  }
+  
+  .order-fixed-footer{
+    z-index: 2;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    border-top: 2px solid purple;
+  }
+  
+  .order-fixed-footer .title{
+    color: #ffffff;
+    line-height: auto;
+    font-size: 18px !important;
+    vertical-align: middle;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .order-fixed-footer .v-input{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    margin-top: 0px;
+    
+  }
+  .order-fixed-footer .v-input input{
+    text-align: right;
+    background-color: #b0bec5;
+    color: red;
+    font-size: 20px !important;
+  }
+  .order-fixed-footer .v-input .v-input__slot::before{
+    display: none !important;
+  }
+  
+  .v-expansion-panel--active > .v-expansion-panel-header{
+    min-height: 50px !important;
+  }
+  
+  .table-list-2 table thead tr th {
+    background-color: #BDBDBD !important;
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+  
+  .w-icon{
+    width: 20px;
+  }
+  
+  .table-list-2 .v-text-field{
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+  .v-data-table td {
+    font-weight: normal;
+  }
+  
+  .text-right input{
+    text-align: right;
+  }
+  
+  .text-center input{
+    text-align: center;
+  }
+  
+  button.w-25{
+    width: 25px !important;
+  }
+  .table-list .v-data-table__wrapper{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+  .numeric-keyboard-key{
+    font-family: 'Roboto';
+  }
+  
+  .numeric-input-text {
+    width: 100% !important;
+    transform: translateX(0px) !important;
+    background-color:whitesmoke;
+  }
+  
+  .bg-01 .v-card--material__heading.success{
+    background-color: #FFFFFF !important;
+  }
+  
+  .bg-01 .apexcharts-menu-open{
+    background: gray !important;
+  }
+  
+  .bg-01 .apexcharts-tooltip {
+    color: #000000;
+  }
+  
+  .bg-01 .apexcharts-tooltip .apexcharts-tooltip-series-group.active {
+    background: #ffffff !important;
+  }
+  
+  @media (max-width: 600px) {
+    .col-sm-6 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .v-application{
+      margin-right: 0px;
+    }
+  }
+  
+  .vue-numeric-input{
+    height: 40px;
+  }
+  .vue-numeric-input input{
+    height: 40px;
+  }
+  
+  .custom-tooltip {
+    width: 100%;
+    text-align: center;
+    // margin-right: 8px;
+    // margin-left: 8px;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .custom-tooltip .header{
+    background-color: lightgray;
+    padding-right: 8px;
+    padding-left: 8px;
+    line-height: 32px;
+    font-weight: bold;
+  }
+  
+  .custom-tooltip .detail{
+    line-height: 40px;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .v-toolbar__content{
+    border-bottom: 1px solid darkgray;
+  }
+  .v-main__wrap.v-content__wrap .container{
+    padding-top: 0px;
+  }
+  
+  // .tab-item-sale {
+  //   min-height: 615px;
+  //   max-height: 615px;
+  //   overflow-y: auto;
+  // }
+  .tab-item-sale{
+    min-height: 370px;
+    max-height: 370px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .tab-item-list{
+    min-height: 530px;
+    max-height: 530px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .tab-item-list_ip{
+    min-height: 500px;
+    max-height: 500px;
+    overflow-y: hidden;
+    overflow-x: hidden !important;
+  }
+  .ver-scroll{
+    max-height: 337px;
+    overflow-y: auto;
+  }
+  @media (max-height: 100px){
+   
+  }
+  
+  .theme--dark.v-btn.v-btn--disabled:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined){
+    background-color: grey !important;
+  }
+  
+  .invisible{
+    display: none;
+  }
+  
+  html, body{
+    overflow-y: hidden
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .container {
+      padding: 0px;
+    }
+    .v-main.v-content{
+      padding-top: 55px !important;
+    }
+    
+  }
+  
+  .v-main__wrap.v-content__wrap {
+    /* height: auto; */
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  button.primary.TG{
+    background-color: pink !important;
+  }
+  
+  button.primary.CTT{
+    // background-color: red !important;
+  }
+  
+  

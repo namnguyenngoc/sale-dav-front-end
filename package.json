@@ -9,8 +9,21 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.14.5",
+    "@types/axios": "^0.14.0",
+    "@types/express": "^4.17.13",
+    "@types/moment": "^2.13.0",
+    "@types/morgan": "^1.9.3",
+    "axios": "^0.21.1",
     "core-js": "^3.15.1",
+    "express": "^4.17.1",
+    "moment": "^2.24.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12",
     "nuxt": "^2.15.7",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5",
+    "vue-swipe-actions": "^2.0.0-beta.20",
     "vuetify": "^2.5.5"
   },
   "devDependencies": {
