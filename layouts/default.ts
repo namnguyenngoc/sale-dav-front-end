@@ -19,22 +19,22 @@ export default Vue.extend({
               title: 'Dashboard',
               to: '/dashboad'
             },
-            {
-              icon: 'mdi-chart-bubble',
-              title: 'Chi Tiêu',
-              to: '/chitieus/chitieu'
-            },
-            {
-              icon: 'mdi-chart-bubble',
-              title: 'Trả góp',
-              to: '/tragop/tragop'
-            }
-            ,
-            {
-              icon: 'mdi-sale',
-              title: 'Bán hàng',
-              to: '/sales/qlbanhang'
-            }
+            // {
+            //   icon: 'mdi-chart-bubble',
+            //   title: 'Chi Tiêu',
+            //   to: '/chitieus/chitieu'
+            // },
+            // {
+            //   icon: 'mdi-chart-bubble',
+            //   title: 'Trả góp',
+            //   to: '/tragop/tragop'
+            // }
+            // ,
+            // {
+            //   icon: 'mdi-sale',
+            //   title: 'Bán hàng',
+            //   to: '/sales/qlbanhang'
+            // }
           ],
           miniVariant: false,
           right: true,
