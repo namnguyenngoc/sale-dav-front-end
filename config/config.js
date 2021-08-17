@@ -6,7 +6,7 @@ const API_URL = 'http://103.69.193.126'; //  platform server
 // Only developing application connect to local ip ,another applications connect to developement server ip.
 const config = {
   // API_FAMILY: `${API_URL}:80/api`,
- API_FAMILY: `${API_URL}:8789`,
+  API_FAMILY: `${API_URL}:8789`,
   dateTimeFormat: 'YYYYMMDD', // Format date time constant for condition search
   tooltipWidth: 300,
 }
