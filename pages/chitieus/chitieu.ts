@@ -104,7 +104,7 @@ export default Vue.extend({
       moment2(d: String) {
         return moment(String(d)).format("DD-MM-YYYY");
       },
-      formatPrice (value, tofix) {
+      formatPrice (value: number, tofix: number | undefined) {
         const val = (value / 1).toFixed(tofix).replace(',', '.');
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         
