@@ -1,12 +1,27 @@
 version: '3.4'
 
 services:
+<<<<<<< HEAD
   webappsale:
     image: webappsale
+=======
+  sale-dav-front-end:
+    image: sale-dav-front-end
+>>>>>>> ce4ce31567fbff1acdf3f86c30808972cd8b0571
     build:
       context: .
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
     ports:
+<<<<<<< HEAD
       - 8788:9770
+=======
+      - 8791:8791
+    deploy:
+      resources:
+        limits:
+          cpus: '0.30'
+          memory: '1024MB'
+
+>>>>>>> ce4ce31567fbff1acdf3f86c30808972cd8b0571

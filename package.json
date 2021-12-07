@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "dev": "nuxt -p 9770",
+=======
+    "dev": "nuxt -p 8791",
+>>>>>>> ce4ce31567fbff1acdf3f86c30808972cd8b0571
     "build": "nuxt build",
     "start": "nuxt start -p 9770",
     "generate": "nuxt generate"
