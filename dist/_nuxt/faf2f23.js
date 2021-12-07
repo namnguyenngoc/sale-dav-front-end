@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{612:function(e,t,n){"use strict";n.r(t);var r=n(0);t.default=r.a.extend({name:"pageHeader",data:function(){return{msg:"This is header"}},props:{title:{type:String,default:""}}})}}]);
